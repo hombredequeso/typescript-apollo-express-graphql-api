@@ -1,4 +1,5 @@
 import { IResolvers } from 'graphql-tools';
+import {Query} from './generated/graphql'
 
 const resolverMap: IResolvers = {
   Query: {
@@ -7,4 +8,5 @@ const resolverMap: IResolvers = {
     },
   },
 };
+
 export default resolverMap;
