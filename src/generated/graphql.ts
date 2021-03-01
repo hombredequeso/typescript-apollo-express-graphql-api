@@ -13,6 +13,20 @@ export type Query = {
   __typename?: 'Query';
   helloWorld: Scalars['String'];
   getPeople: Array<Person>;
+  getJob?: Maybe<Job>;
+  getJobs: Array<Job>;
+};
+
+
+export type QueryGetJobArgs = {
+  id?: Maybe<Scalars['String']>;
+};
+
+export type Job = {
+  __typename?: 'Job';
+  id: Scalars['String'];
+  description: Scalars['String'];
+  description2: Scalars['String'];
 };
 
 export type Group = {

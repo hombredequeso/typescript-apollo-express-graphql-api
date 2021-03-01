@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node 'dist/server.js'",
     "build": "tsc -p . ",
-    "start:dev": "npm run build:dev",
+    "start:dev": "yarn run build:dev",
     "build:dev": "nodemon 'src/server.ts' --exec 'ts-node' src/server.ts -e ts,graphql",
     "codegen": "graphql-codegen --config codegen.yml"
   },
