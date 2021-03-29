@@ -22,6 +22,16 @@ export type QueryGetJobArgs = {
   id?: Maybe<Scalars['String']>;
 };
 
+export type Subscription = {
+  __typename?: 'Subscription';
+  bigEvent?: Maybe<BigEvent>;
+};
+
+export type BigEvent = {
+  __typename?: 'BigEvent';
+  id: Scalars['String'];
+};
+
 export type Job = {
   __typename?: 'Job';
   id: Scalars['String'];

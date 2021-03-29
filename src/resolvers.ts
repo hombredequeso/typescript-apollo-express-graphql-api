@@ -1,5 +1,6 @@
 import { IResolvers } from 'graphql-tools';
 import {Query, Person, Group, Job, Maybe} from './generated/graphql'
+import pubSub from './pubSubInMemory'
 
 type PersonR = {
   firstName: string;
@@ -60,6 +61,11 @@ const toMaybe = <T>(x: T|null|undefined) : Maybe<T> => {
 
 
 const resolverMap: IResolvers = {
+  Subscription: {
+    bigEvent: {
+      subscribe: () => pubSub.asyncIterator(['BIG_EVENT']),
+    },
+  },
   Query: {
     helloWorld(_: void, args: void): string {
       return `👋 Hello world! 👋`;

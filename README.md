@@ -15,6 +15,29 @@ yarn start:dev
 * run ```yarn codegen``` to update generated/graphql.ts
 * Create new resolvers in resolvers.ts
 
+## Subscription Testing
+
+Test BigEvents can be triggered by posting to ```localhost:3000/bigevent```, which is implement as part of the same express app that is hosting graphql.
+
+Go to the [graphql playground](http://localhost:3000/graphql)
+
+Subscribe to the big events with:
+```
+subscription {
+  bigEvent {
+    id
+  }
+}
+```
+
+Then trigger a big event with:
+```
+curl -X POST localhost:3000/bigevent
+```
+
+
+
+
 ## Notes
 
 Jobs is an looking at how multiple data sources for a single entity type interact in the resolvers.

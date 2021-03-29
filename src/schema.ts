@@ -9,6 +9,14 @@ const schema = gql`
     getJobs: [Job!]!
   }
 
+  type Subscription {
+    bigEvent: BigEvent
+  }
+
+  type BigEvent {
+    id: String!
+  }
+
   type Job {
     id: String!
     description: String!
